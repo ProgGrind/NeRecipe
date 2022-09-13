@@ -23,7 +23,7 @@ class RecipeViewModel(
     val recipeViewEvent = SingleLiveEvent<Long>()
     val navigateToRecipeCreationFragmentEvent = SingleLiveEvent<Recipe?>()
     private val currentRecipe = MutableLiveData<Recipe?>(null)
-    private var categoriesFilter: List<Category> = Category.values().toList()
+    var categoriesFilter: List<Category> = Category.values().toList()
     var setCategoryFilter = false
 
 
@@ -96,6 +96,8 @@ class RecipeViewModel(
         categoriesFilter = categories
         repository.update()
     }
+
+
 
 
 }
